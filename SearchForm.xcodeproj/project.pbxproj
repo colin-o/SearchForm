@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B28133213B12A7A00DE297A /* EditorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B28133113B12A7A00DE297A /* EditorCell.xib */; };
 		3B3EC98013B0237A0009EFA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3EC97F13B0237A0009EFA6 /* UIKit.framework */; };
 		3B3EC98213B0237A0009EFA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3EC98113B0237A0009EFA6 /* Foundation.framework */; };
 		3B3EC98413B0237A0009EFA6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3EC98313B0237A0009EFA6 /* CoreGraphics.framework */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B28133113B12A7A00DE297A /* EditorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditorCell.xib; sourceTree = "<group>"; };
 		3B3EC97B13B0237A0009EFA6 /* SearchForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3EC97F13B0237A0009EFA6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3B3EC98113B0237A0009EFA6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -144,6 +146,7 @@
 			children = (
 				3B3EC99113B0237A0009EFA6 /* MainWindow.xib */,
 				3B3EC99C13B024C90009EFA6 /* SearchView.xib */,
+				3B28133113B12A7A00DE297A /* EditorCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				3B3EC98A13B0237A0009EFA6 /* InfoPlist.strings in Resources */,
 				3B3EC99313B0237A0009EFA6 /* MainWindow.xib in Resources */,
 				3B3EC99D13B024C90009EFA6 /* SearchView.xib in Resources */,
+				3B28133213B12A7A00DE297A /* EditorCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +382,7 @@
 				3B3EC99813B0237A0009EFA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

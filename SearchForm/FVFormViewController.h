@@ -12,6 +12,7 @@
 
 @interface FVFormViewController : UITableViewController {
     FVForm *form;
+    NSMutableDictionary *cells;
 }
 
 @property(retain, nonatomic) FVForm *form;

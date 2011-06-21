@@ -73,7 +73,7 @@
 }
 
 - (IBAction)showForm:(id)sender {
-    settingsViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+    settingsViewController.modalPresentationStyle = UIModalPresentationPageSheet;
     [rootViewController presentModalViewController:settingsViewController animated:YES];
 }
 @end

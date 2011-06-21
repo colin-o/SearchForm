@@ -23,12 +23,15 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        cells = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [cells release];
+    [form release];
     [super dealloc];
 }
 
@@ -110,13 +113,14 @@
     FVSection *section = [form sectionAtIndex:[indexPath section]];
     FVField *field = [section fieldAtIndex:[indexPath row]];    
     
-    FVEditorCell *cell = (FVEditorCell*)[tableView dequeueReusableCellWithIdentifier:field.identifier];
+    FVEditorCell *cell = (FVEditorCell*)[cells objectForKey:field.identifier];
     if (cell == nil) 
     {
         cell = [[[FVEditorCell alloc] initWithField:field] autorelease];
+        [cells setObject:cell forKey:field.identifier];
     }
-
-    return cell;
+    
+    return cell.cell;
 }
 
 /*
