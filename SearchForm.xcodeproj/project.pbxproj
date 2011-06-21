@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B3EC98013B0237A0009EFA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3EC97F13B0237A0009EFA6 /* UIKit.framework */; };
+		3B3EC98213B0237A0009EFA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3EC98113B0237A0009EFA6 /* Foundation.framework */; };
+		3B3EC98413B0237A0009EFA6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3EC98313B0237A0009EFA6 /* CoreGraphics.framework */; };
+		3B3EC98A13B0237A0009EFA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3EC98813B0237A0009EFA6 /* InfoPlist.strings */; };
+		3B3EC98D13B0237A0009EFA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC98C13B0237A0009EFA6 /* main.m */; };
+		3B3EC99013B0237A0009EFA6 /* SearchFormAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC98F13B0237A0009EFA6 /* SearchFormAppDelegate.m */; };
+		3B3EC99313B0237A0009EFA6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3EC99113B0237A0009EFA6 /* MainWindow.xib */; };
+		3B3EC99D13B024C90009EFA6 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3EC99C13B024C90009EFA6 /* SearchView.xib */; };
+		3B3EC9A213B025B50009EFA6 /* FVField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9A113B025B50009EFA6 /* FVField.m */; };
+		3B3EC9A513B025FF0009EFA6 /* FVForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9A413B025FF0009EFA6 /* FVForm.m */; };
+		3B3EC9A813B026170009EFA6 /* FVSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9A713B026170009EFA6 /* FVSection.m */; };
+		3B3EC9AB13B028A50009EFA6 /* FVFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9AA13B028A40009EFA6 /* FVFormViewController.m */; };
+		3B3EC9B213B02CC10009EFA6 /* FVFieldEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9B113B02CBF0009EFA6 /* FVFieldEditor.m */; };
+		3B3EC9B513B02E570009EFA6 /* FVEditorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9B413B02E550009EFA6 /* FVEditorCell.m */; };
+		3B3EC9BB13B048770009EFA6 /* FVLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9BA13B048770009EFA6 /* FVLabelView.m */; };
+		3B3EC9BE13B0564D0009EFA6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9BD13B0564D0009EFA6 /* SettingsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B3EC97B13B0237A0009EFA6 /* SearchForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B3EC97F13B0237A0009EFA6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3B3EC98113B0237A0009EFA6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3B3EC98313B0237A0009EFA6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3B3EC98713B0237A0009EFA6 /* SearchForm-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SearchForm-Info.plist"; sourceTree = "<group>"; };
+		3B3EC98913B0237A0009EFA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B3EC98B13B0237A0009EFA6 /* SearchForm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchForm-Prefix.pch"; sourceTree = "<group>"; };
+		3B3EC98C13B0237A0009EFA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B3EC98E13B0237A0009EFA6 /* SearchFormAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchFormAppDelegate.h; sourceTree = "<group>"; };
+		3B3EC98F13B0237A0009EFA6 /* SearchFormAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchFormAppDelegate.m; sourceTree = "<group>"; };
+		3B3EC99213B0237A0009EFA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		3B3EC99C13B024C90009EFA6 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		3B3EC9A013B025B50009EFA6 /* FVField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVField.h; sourceTree = "<group>"; };
+		3B3EC9A113B025B50009EFA6 /* FVField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVField.m; sourceTree = "<group>"; };
+		3B3EC9A313B025FE0009EFA6 /* FVForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVForm.h; sourceTree = "<group>"; };
+		3B3EC9A413B025FF0009EFA6 /* FVForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVForm.m; sourceTree = "<group>"; };
+		3B3EC9A613B026160009EFA6 /* FVSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVSection.h; sourceTree = "<group>"; };
+		3B3EC9A713B026170009EFA6 /* FVSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVSection.m; sourceTree = "<group>"; };
+		3B3EC9A913B028A40009EFA6 /* FVFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVFormViewController.h; sourceTree = "<group>"; };
+		3B3EC9AA13B028A40009EFA6 /* FVFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVFormViewController.m; sourceTree = "<group>"; };
+		3B3EC9AF13B02B460009EFA6 /* FVFormView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVFormView.h; sourceTree = "<group>"; };
+		3B3EC9B013B02CBE0009EFA6 /* FVFieldEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVFieldEditor.h; sourceTree = "<group>"; };
+		3B3EC9B113B02CBF0009EFA6 /* FVFieldEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVFieldEditor.m; sourceTree = "<group>"; };
+		3B3EC9B313B02E530009EFA6 /* FVEditorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVEditorCell.h; sourceTree = "<group>"; };
+		3B3EC9B413B02E550009EFA6 /* FVEditorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVEditorCell.m; sourceTree = "<group>"; };
+		3B3EC9B913B048770009EFA6 /* FVLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVLabelView.h; sourceTree = "<group>"; };
+		3B3EC9BA13B048770009EFA6 /* FVLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVLabelView.m; sourceTree = "<group>"; };
+		3B3EC9BC13B0564D0009EFA6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		3B3EC9BD13B0564D0009EFA6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B3EC97813B0237A0009EFA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3EC98013B0237A0009EFA6 /* UIKit.framework in Frameworks */,
+				3B3EC98213B0237A0009EFA6 /* Foundation.framework in Frameworks */,
+				3B3EC98413B0237A0009EFA6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B3EC97013B023790009EFA6 = {
+			isa = PBXGroup;
+			children = (
+				3B3EC98513B0237A0009EFA6 /* SearchForm */,
+				3B3EC97E13B0237A0009EFA6 /* Frameworks */,
+				3B3EC97C13B0237A0009EFA6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B3EC97C13B0237A0009EFA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC97B13B0237A0009EFA6 /* SearchForm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B3EC97E13B0237A0009EFA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC97F13B0237A0009EFA6 /* UIKit.framework */,
+				3B3EC98113B0237A0009EFA6 /* Foundation.framework */,
+				3B3EC98313B0237A0009EFA6 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B3EC98513B0237A0009EFA6 /* SearchForm */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC99E13B0256D0009EFA6 /* Plugins */,
+				3B3EC99B13B024950009EFA6 /* Views */,
+				3B3EC99A13B0248F0009EFA6 /* Controllers */,
+				3B3EC99913B024870009EFA6 /* Models */,
+				3B3EC98613B0237A0009EFA6 /* Supporting Files */,
+			);
+			path = SearchForm;
+			sourceTree = "<group>";
+		};
+		3B3EC98613B0237A0009EFA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC98713B0237A0009EFA6 /* SearchForm-Info.plist */,
+				3B3EC98813B0237A0009EFA6 /* InfoPlist.strings */,
+				3B3EC98B13B0237A0009EFA6 /* SearchForm-Prefix.pch */,
+				3B3EC98C13B0237A0009EFA6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B3EC99913B024870009EFA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3B3EC99A13B0248F0009EFA6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC98E13B0237A0009EFA6 /* SearchFormAppDelegate.h */,
+				3B3EC98F13B0237A0009EFA6 /* SearchFormAppDelegate.m */,
+				3B3EC9BC13B0564D0009EFA6 /* SettingsViewController.h */,
+				3B3EC9BD13B0564D0009EFA6 /* SettingsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3B3EC99B13B024950009EFA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC99113B0237A0009EFA6 /* MainWindow.xib */,
+				3B3EC99C13B024C90009EFA6 /* SearchView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3B3EC99E13B0256D0009EFA6 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC99F13B025760009EFA6 /* FormView */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		3B3EC99F13B025760009EFA6 /* FormView */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC9B813B048500009EFA6 /* Views */,
+				3B3EC9B713B048430009EFA6 /* Controllers */,
+				3B3EC9B613B0481B0009EFA6 /* Models */,
+				3B3EC9AF13B02B460009EFA6 /* FVFormView.h */,
+			);
+			name = FormView;
+			sourceTree = "<group>";
+		};
+		3B3EC9B613B0481B0009EFA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC9B013B02CBE0009EFA6 /* FVFieldEditor.h */,
+				3B3EC9B113B02CBF0009EFA6 /* FVFieldEditor.m */,
+				3B3EC9A013B025B50009EFA6 /* FVField.h */,
+				3B3EC9A113B025B50009EFA6 /* FVField.m */,
+				3B3EC9A313B025FE0009EFA6 /* FVForm.h */,
+				3B3EC9A413B025FF0009EFA6 /* FVForm.m */,
+				3B3EC9A613B026160009EFA6 /* FVSection.h */,
+				3B3EC9A713B026170009EFA6 /* FVSection.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3B3EC9B713B048430009EFA6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC9A913B028A40009EFA6 /* FVFormViewController.h */,
+				3B3EC9AA13B028A40009EFA6 /* FVFormViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3B3EC9B813B048500009EFA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B3EC9B313B02E530009EFA6 /* FVEditorCell.h */,
+				3B3EC9B413B02E550009EFA6 /* FVEditorCell.m */,
+				3B3EC9B913B048770009EFA6 /* FVLabelView.h */,
+				3B3EC9BA13B048770009EFA6 /* FVLabelView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B3EC97A13B0237A0009EFA6 /* SearchForm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B3EC99613B0237A0009EFA6 /* Build configuration list for PBXNativeTarget "SearchForm" */;
+			buildPhases = (
+				3B3EC97713B0237A0009EFA6 /* Sources */,
+				3B3EC97813B0237A0009EFA6 /* Frameworks */,
+				3B3EC97913B0237A0009EFA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SearchForm;
+			productName = SearchForm;
+			productReference = 3B3EC97B13B0237A0009EFA6 /* SearchForm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B3EC97213B023790009EFA6 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3B3EC97513B023790009EFA6 /* Build configuration list for PBXProject "SearchForm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3B3EC97013B023790009EFA6;
+			productRefGroup = 3B3EC97C13B0237A0009EFA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B3EC97A13B0237A0009EFA6 /* SearchForm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B3EC97913B0237A0009EFA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3EC98A13B0237A0009EFA6 /* InfoPlist.strings in Resources */,
+				3B3EC99313B0237A0009EFA6 /* MainWindow.xib in Resources */,
+				3B3EC99D13B024C90009EFA6 /* SearchView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B3EC97713B0237A0009EFA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3EC98D13B0237A0009EFA6 /* main.m in Sources */,
+				3B3EC99013B0237A0009EFA6 /* SearchFormAppDelegate.m in Sources */,
+				3B3EC9A213B025B50009EFA6 /* FVField.m in Sources */,
+				3B3EC9A513B025FF0009EFA6 /* FVForm.m in Sources */,
+				3B3EC9A813B026170009EFA6 /* FVSection.m in Sources */,
+				3B3EC9AB13B028A50009EFA6 /* FVFormViewController.m in Sources */,
+				3B3EC9B213B02CC10009EFA6 /* FVFieldEditor.m in Sources */,
+				3B3EC9B513B02E570009EFA6 /* FVEditorCell.m in Sources */,
+				3B3EC9BB13B048770009EFA6 /* FVLabelView.m in Sources */,
+				3B3EC9BE13B0564D0009EFA6 /* SettingsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3B3EC98813B0237A0009EFA6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B3EC98913B0237A0009EFA6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3B3EC99113B0237A0009EFA6 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B3EC99213B0237A0009EFA6 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B3EC99413B0237A0009EFA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		3B3EC99513B0237A0009EFA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		3B3EC99713B0237A0009EFA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SearchForm/SearchForm-Prefix.pch";
+				INFOPLIST_FILE = "SearchForm/SearchForm-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3B3EC99813B0237A0009EFA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SearchForm/SearchForm-Prefix.pch";
+				INFOPLIST_FILE = "SearchForm/SearchForm-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B3EC97513B023790009EFA6 /* Build configuration list for PBXProject "SearchForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B3EC99413B0237A0009EFA6 /* Debug */,
+				3B3EC99513B0237A0009EFA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B3EC99613B0237A0009EFA6 /* Build configuration list for PBXNativeTarget "SearchForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B3EC99713B0237A0009EFA6 /* Debug */,
+				3B3EC99813B0237A0009EFA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B3EC97213B023790009EFA6 /* Project object */;
+}
