@@ -11,7 +11,7 @@
 
 @implementation FVFieldEditor
 
-@synthesize identifier;
+@synthesize identifier, type;
 
 - (id)initWithType:(FVEditorType)aType identifier:(NSString*)anIdentifier
 {

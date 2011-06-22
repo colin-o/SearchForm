@@ -12,7 +12,7 @@
 
 @implementation FVField
 
-@synthesize caption;
+@synthesize caption, editors;
 
 - (id)initWithCaption:(NSString*)aCaption;
 {
@@ -52,6 +52,20 @@
     FVFieldEditor *editor = [[FVFieldEditor alloc] initWithType:FVTextField identifier:identifier];
     [self addEditor:editor];
     [editor release];
+}
+
+- (void)addBooleanEditor:(NSString*)identifier
+{
+    FVFieldEditor *editor = [[FVFieldEditor alloc] initWithType:FVBooleanField identifier:identifier];
+    [self addEditor:editor];
+    [editor release];    
+}
+
+- (void)addMultipleChoiceEditor:(NSString*)identifier
+{
+    FVFieldEditor *editor = [[FVFieldEditor alloc] initWithType:FVMultipleChoiceField identifier:identifier];
+    [self addEditor:editor];
+    [editor release];        
 }
 
 - (NSString*)identifier

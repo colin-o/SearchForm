@@ -7,7 +7,7 @@
 //
 
 #import "FVFormViewController.h"
-#import "FVEditorCell.h"
+#import "FVEditorCellFactory.h"
 #import "FVForm.h"
 #import "FVSection.h"
 #import "FVField.h"
@@ -113,14 +113,14 @@
     FVSection *section = [form sectionAtIndex:[indexPath section]];
     FVField *field = [section fieldAtIndex:[indexPath row]];    
     
-    FVEditorCell *cell = (FVEditorCell*)[cells objectForKey:field.identifier];
-    if (cell == nil) 
+    FVEditorCellManager *cellManager = (FVEditorCellManager*)[cells objectForKey:field.identifier];
+    if (cellManager == nil) 
     {
-        cell = [[[FVEditorCell alloc] initWithField:field] autorelease];
-        [cells setObject:cell forKey:field.identifier];
+        cellManager = [FVEditorCellFactory cellManagerForField:field];
+        [cells setObject:cellManager forKey:field.identifier];
     }
     
-    return cell.cell;
+    return cellManager.cell;
 }
 
 /*

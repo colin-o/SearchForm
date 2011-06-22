@@ -17,11 +17,17 @@
 
 @property(copy, nonatomic) NSString *caption;
 
+@property(readonly, nonatomic) NSArray *editors;
+
 - (id)initWithCaption:(NSString*)aCaption;
 
 - (void)addEditor:(FVFieldEditor*)editor;
 
 - (void)addTextEditor:(NSString*)identifier;
+
+- (void)addBooleanEditor:(NSString*)identifier;
+
+- (void)addMultipleChoiceEditor:(NSString*)identifier;
 
 - (NSString*)identifier;
 

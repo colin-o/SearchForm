@@ -46,43 +46,68 @@
     FVSection *section = nil;
     FVField *field = nil;
     
-    // User Information
-    section = [[FVSection alloc] initWithTitle:@"User Information"];
+    // Section
+    section = [[FVSection alloc] initWithTitle:@"Search Criteria"];
     [form addSection:section];
     [section release];
     
-    field = [[FVField alloc] initWithCaption:@"First Name"];
-    [field addTextEditor:@"firstName"];
+    field = [[FVField alloc] initWithCaption:@"Plan Name"];
+    [field addTextEditor:@"planName"];
     [section addField:field];
     [field release];
     
-    field = [[FVField alloc] initWithCaption:@"Last Name"];
-    [field addTextEditor:@"lastName"];
+    field = [[FVField alloc] initWithCaption:@"Company"];
+    [field addTextEditor:@"company"];
     [section addField:field];
     [field release];
     
-    field = [[FVField alloc] initWithCaption:@"Telephone"];
-    [field addTextEditor:@"telephone"];
+    field = [[FVField alloc] initWithCaption:@"Products & Services"];
+    [field addTextEditor:@"productsAndServices"];
     [section addField:field];
     [field release];
     
-    // Login Information
-    section = [[FVSection alloc] initWithTitle:@"Login Information"];
+    field = [[FVField alloc] initWithCaption:@"Only plans with downloadable images"];
+    [field addBooleanEditor:@"imagesOnly"];
+    [section addField:field];
+    [field release];
+    
+    field = [[FVField alloc] initWithCaption:@"Dealer / Distributor list available"];
+    [field addBooleanEditor:@"dealListAvailable"];
+    [section addField:field];
+    [field release];
+    
+    // Section
+    section = [[FVSection alloc] initWithTitle:@"Types"];
     [form addSection:section];
     [section release];
     
-    field = [[FVField alloc] initWithCaption:@"Email"];
-    [field addTextEditor:@"email"];
+    field = [[FVField alloc] initWithCaption:@"Plan Type"];
+    [field addMultipleChoiceEditor:@"planType"];
     [section addField:field];
     [field release];
     
-    field = [[FVField alloc] initWithCaption:@"Password"];
-    [field addTextEditor:@"password"];
+    field = [[FVField alloc] initWithCaption:@"Competitors"];
+    [field addMultipleChoiceEditor:@"competitors"];
     [section addField:field];
     [field release];
     
-    field = [[FVField alloc] initWithCaption:@"Verify Password"];
-    [field addTextEditor:@"password_verify"];
+    field = [[FVField alloc] initWithCaption:@"Other Media"];
+    [field addMultipleChoiceEditor:@"otherMedia"];
+    [section addField:field];
+    [field release];
+    
+    field = [[FVField alloc] initWithCaption:@"Internet"];
+    [field addBooleanEditor:@"internet"];
+    [section addField:field];
+    [field release];
+    
+    // Section
+    section = [[FVSection alloc] initWithTitle:@"Categories"];
+    [form addSection:section];
+    [section release];
+    
+    field = [[FVField alloc] initWithCaption:@"Headings / Categories"];
+    [field addMultipleChoiceEditor:@"categories"];
     [section addField:field];
     [field release];
     

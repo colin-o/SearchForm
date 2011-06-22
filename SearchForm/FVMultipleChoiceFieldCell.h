@@ -1,32 +1,30 @@
 //
-//  FVEditorCell.h
+//  FVMultipleChoiceFieldCell.h
 //  SearchForm
 //
-//  Created by Colin Olson on 11-06-20.
+//  Created by Colin Olson on 11-06-21.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "FVEditorCellFactory.h"
 
-@class FVField;
-@class FVLabelView;
-
-@interface FVEditorCell : NSObject {
+@interface FVMultipleChoiceFieldCell : FVEditorCellManager {
+@private
     FVField *field;
     UITableViewCell *cell;
     UILabel *label;
-    UITextField *editor;
+    UILabel *selectedItemsLabel;
 }
+
 @property (nonatomic, retain) IBOutlet UITableViewCell *cell;
 
 @property (nonatomic, retain) IBOutlet UILabel *label;
 
-@property (nonatomic, retain) IBOutlet UITextField *editor;
-
-@property(readonly, nonatomic) FVField *field;
-
-@property(assign, nonatomic) CGFloat labelWidth;
+@property (nonatomic, retain) IBOutlet UILabel *selectedItemsLabel;
 
 - (id)initWithField:(FVField*)aField;
+
+- (UITableViewCell*)cell;
 
 @end
