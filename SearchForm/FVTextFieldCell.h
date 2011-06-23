@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FVEditorCellFactory.h"
 
-@interface FVTextFieldCell : FVEditorCellManager {
+@interface FVTextFieldCell : FVEditorCellManager<UITextFieldDelegate> {
 @private
     FVField *field;
     UILabel *label;

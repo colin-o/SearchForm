@@ -23,6 +23,8 @@
         
         label.text = field.caption;
         editor.placeholder = @"Required";
+        editor.delegate = self;
+        editor.returnKeyType = UIReturnKeyDone;
     }
     
     return self;
@@ -37,4 +39,9 @@
     [super dealloc];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [editor resignFirstResponder];
+    return YES;
+}
 @end
