@@ -12,6 +12,7 @@
 		3B043A8D13B1B51700B91488 /* BooleanFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B043A8C13B1B51700B91488 /* BooleanFieldCell.xib */; };
 		3B043A8F13B1BA9E00B91488 /* MultipleChoiceFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B043A8E13B1BA9D00B91488 /* MultipleChoiceFieldCell.xib */; };
 		3B043A9213B1BB8600B91488 /* FVMultipleChoiceFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B043A9113B1BB8500B91488 /* FVMultipleChoiceFieldCell.m */; };
+		3B043AE813B2DEA400B91488 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B043AE713B2DEA400B91488 /* SearchView.xib */; };
 		3B28133213B12A7A00DE297A /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B28133113B12A7A00DE297A /* TextFieldCell.xib */; };
 		3B3EC98013B0237A0009EFA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3EC97F13B0237A0009EFA6 /* UIKit.framework */; };
 		3B3EC98213B0237A0009EFA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3EC98113B0237A0009EFA6 /* Foundation.framework */; };
@@ -38,6 +39,7 @@
 		3B043A8E13B1BA9D00B91488 /* MultipleChoiceFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleChoiceFieldCell.xib; sourceTree = "<group>"; };
 		3B043A9013B1BB8500B91488 /* FVMultipleChoiceFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVMultipleChoiceFieldCell.h; sourceTree = "<group>"; };
 		3B043A9113B1BB8500B91488 /* FVMultipleChoiceFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVMultipleChoiceFieldCell.m; sourceTree = "<group>"; };
+		3B043AE713B2DEA400B91488 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		3B28133113B12A7A00DE297A /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		3B3EC97B13B0237A0009EFA6 /* SearchForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3EC97F13B0237A0009EFA6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				3B3EC99113B0237A0009EFA6 /* MainWindow.xib */,
+				3B043AE713B2DEA400B91488 /* SearchView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				3B28133213B12A7A00DE297A /* TextFieldCell.xib in Resources */,
 				3B043A8D13B1B51700B91488 /* BooleanFieldCell.xib in Resources */,
 				3B043A8F13B1BA9E00B91488 /* MultipleChoiceFieldCell.xib in Resources */,
+				3B043AE813B2DEA400B91488 /* SearchView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,9 +12,9 @@
 
 @interface SearchFormAppDelegate : NSObject <UIApplicationDelegate> {
     UIViewController *rootViewController;
-    SettingsViewController *settingsViewController;
-    
+    SettingsViewController *searchController;
 }
+@property (nonatomic, retain) IBOutlet SettingsViewController *searchController;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 

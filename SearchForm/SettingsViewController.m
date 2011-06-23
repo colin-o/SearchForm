@@ -21,13 +21,7 @@
     self = [super init];
     if(self)
     {
-        [self createFormViewController];
-        formController.title = @"Form";
-        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonItemStyleDone target:self action:nil];
         
-        formController.navigationItem.rightBarButtonItem = item;
-        
-        [self pushViewController:formController animated:NO];
     }
     return self;
 }
@@ -36,6 +30,11 @@
 {
     [formController release];
     [super dealloc];
+}
+
+- (void)awakeFromNib
+{
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,16 +128,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if(formController == nil)
+    {
+        [self createFormViewController];
+        [self pushViewController:formController animated:NO];        
+    }
 }
 
 - (void)viewDidUnload
 {
-    formController = nil;
     [super viewDidUnload];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

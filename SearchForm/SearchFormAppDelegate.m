@@ -12,13 +12,12 @@
 @implementation SearchFormAppDelegate
 
 
+@synthesize searchController;
 @synthesize window=_window;
 @synthesize rootViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    settingsViewController = [[SettingsViewController alloc] init];
-    
+{    
     [self.window makeKeyAndVisible];
     [self.window addSubview:rootViewController.view];
     
@@ -66,14 +65,17 @@
 
 - (void)dealloc
 {
-    [settingsViewController release];
     [_window release];
     [rootViewController release];
+    [searchController release];
     [super dealloc];
 }
 
 - (IBAction)showForm:(id)sender {
-    settingsViewController.modalPresentationStyle = UIModalPresentationPageSheet;
-    [rootViewController presentModalViewController:settingsViewController animated:YES];
+    if(searchController == nil)
+        [[UINib nibWithNibName:@"SearchView" bundle:nil] instantiateWithOwner:self options:nil];
+    
+    searchController.modalPresentationStyle = UIModalPresentationPageSheet;
+    [rootViewController presentModalViewController:searchController animated:YES];
 }
 @end

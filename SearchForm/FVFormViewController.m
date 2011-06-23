@@ -48,12 +48,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = @"Search Criteria";
+    
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStyleDone target:self action:@selector(anything:)];
+    self.navigationItem.rightBarButtonItem = searchButton;
+    [searchButton release];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    [cancelButton release];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)cancel:(id)sender
+{
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)viewDidUnload
