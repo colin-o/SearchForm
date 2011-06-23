@@ -10,10 +10,11 @@
 
 @class FVFormViewController;
 
-@interface SettingsViewController : UIViewController {
+@interface SettingsViewController : UINavigationController {
 
     FVFormViewController *formController;
 }
+
 @property (nonatomic, retain) IBOutlet FVFormViewController *formController;
 
 

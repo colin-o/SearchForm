@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    settingsViewController = [[SettingsViewController alloc] initWithNibName:@"SearchView" bundle:[NSBundle mainBundle]];
+    settingsViewController = [[SettingsViewController alloc] init];
     
     [self.window makeKeyAndVisible];
     [self.window addSubview:rootViewController.view];

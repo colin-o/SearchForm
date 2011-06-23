@@ -20,7 +20,6 @@
 		3B3EC98D13B0237A0009EFA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC98C13B0237A0009EFA6 /* main.m */; };
 		3B3EC99013B0237A0009EFA6 /* SearchFormAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC98F13B0237A0009EFA6 /* SearchFormAppDelegate.m */; };
 		3B3EC99313B0237A0009EFA6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3EC99113B0237A0009EFA6 /* MainWindow.xib */; };
-		3B3EC99D13B024C90009EFA6 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3EC99C13B024C90009EFA6 /* SearchView.xib */; };
 		3B3EC9A213B025B50009EFA6 /* FVField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9A113B025B50009EFA6 /* FVField.m */; };
 		3B3EC9A513B025FF0009EFA6 /* FVForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9A413B025FF0009EFA6 /* FVForm.m */; };
 		3B3EC9A813B026170009EFA6 /* FVSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9A713B026170009EFA6 /* FVSection.m */; };
@@ -51,7 +50,6 @@
 		3B3EC98E13B0237A0009EFA6 /* SearchFormAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchFormAppDelegate.h; sourceTree = "<group>"; };
 		3B3EC98F13B0237A0009EFA6 /* SearchFormAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchFormAppDelegate.m; sourceTree = "<group>"; };
 		3B3EC99213B0237A0009EFA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		3B3EC99C13B024C90009EFA6 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		3B3EC9A013B025B50009EFA6 /* FVField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVField.h; sourceTree = "<group>"; };
 		3B3EC9A113B025B50009EFA6 /* FVField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVField.m; sourceTree = "<group>"; };
 		3B3EC9A313B025FE0009EFA6 /* FVForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVForm.h; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				3B3EC99113B0237A0009EFA6 /* MainWindow.xib */,
-				3B3EC99C13B024C90009EFA6 /* SearchView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -270,7 +267,6 @@
 			files = (
 				3B3EC98A13B0237A0009EFA6 /* InfoPlist.strings in Resources */,
 				3B3EC99313B0237A0009EFA6 /* MainWindow.xib in Resources */,
-				3B3EC99D13B024C90009EFA6 /* SearchView.xib in Resources */,
 				3B28133213B12A7A00DE297A /* TextFieldCell.xib in Resources */,
 				3B043A8D13B1B51700B91488 /* BooleanFieldCell.xib in Resources */,
 				3B043A8F13B1BA9E00B91488 /* MultipleChoiceFieldCell.xib in Resources */,

@@ -9,15 +9,25 @@
 #import "SettingsViewController.h"
 #import "FVFormView.h"
 
+@interface SettingsViewController(Private)
+- (void)createFormViewController;
+@end
 
 @implementation SettingsViewController
 @synthesize formController;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self = [super init];
+    if(self)
+    {
+        [self createFormViewController];
+        formController.title = @"Form";
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonItemStyleDone target:self action:nil];
+        
+        formController.navigationItem.rightBarButtonItem = item;
+        
+        [self pushViewController:formController animated:NO];
     }
     return self;
 }
@@ -36,12 +46,11 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
+- (void)createFormViewController
 {
-    [super viewDidLoad];
-
+    [formController release];
+    formController = [[[FVFormViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+    
     FVForm *form = [[FVForm alloc] init];
     FVSection *section = nil;
     FVField *field = nil;
@@ -112,15 +121,24 @@
     [field release];
     
     formController.form = form;
-    [form release];
+    [form release];  
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 }
 
 - (void)viewDidUnload
 {
-    [self setFormController:nil];
+    formController = nil;
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
