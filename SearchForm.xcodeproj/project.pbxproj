@@ -28,6 +28,7 @@
 		3B3EC9B213B02CC10009EFA6 /* FVFieldEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9B113B02CBF0009EFA6 /* FVFieldEditor.m */; };
 		3B3EC9B513B02E570009EFA6 /* FVEditorCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9B413B02E550009EFA6 /* FVEditorCellFactory.m */; };
 		3B3EC9BE13B0564D0009EFA6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9BD13B0564D0009EFA6 /* SettingsViewController.m */; };
+		3BBDFED113B2EDF200F30E91 /* FVMultipleChoiceSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBDFED013B2EDF200F30E91 /* FVMultipleChoiceSelectionController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		3B3EC9B413B02E550009EFA6 /* FVEditorCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVEditorCellFactory.m; sourceTree = "<group>"; };
 		3B3EC9BC13B0564D0009EFA6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		3B3EC9BD13B0564D0009EFA6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		3BBDFECF13B2EDF200F30E91 /* FVMultipleChoiceSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVMultipleChoiceSelectionController.h; sourceTree = "<group>"; };
+		3BBDFED013B2EDF200F30E91 /* FVMultipleChoiceSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVMultipleChoiceSelectionController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,8 @@
 			children = (
 				3B3EC9A913B028A40009EFA6 /* FVFormViewController.h */,
 				3B3EC9AA13B028A40009EFA6 /* FVFormViewController.m */,
+				3BBDFECF13B2EDF200F30E91 /* FVMultipleChoiceSelectionController.h */,
+				3BBDFED013B2EDF200F30E91 /* FVMultipleChoiceSelectionController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				3B043A8813B1B0AF00B91488 /* FVTextFieldCell.m in Sources */,
 				3B043A8B13B1B45D00B91488 /* FVBooleanFieldCell.m in Sources */,
 				3B043A9213B1BB8600B91488 /* FVMultipleChoiceFieldCell.m in Sources */,
+				3BBDFED113B2EDF200F30E91 /* FVMultipleChoiceSelectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,10 +336,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -345,11 +352,12 @@
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -363,6 +371,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SearchForm/SearchForm-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SearchForm/SearchForm-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -376,6 +385,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SearchForm/SearchForm-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SearchForm/SearchForm-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;

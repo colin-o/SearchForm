@@ -1,38 +1,27 @@
 //
-//  FVFormViewController.m
+//  FVMultipleChoiceSelectionController.m
 //  SearchForm
 //
-//  Created by Colin Olson on 11-06-20.
+//  Created by Colin Olson on 11-06-22.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "FVFormViewController.h"
-#import "FVEditorCellFactory.h"
-#import "FVForm.h"
-#import "FVSection.h"
-#import "FVField.h"
-#import "FVFieldEditor.h"
 #import "FVMultipleChoiceSelectionController.h"
 
 
-@implementation FVFormViewController
-
-@synthesize form;
+@implementation FVMultipleChoiceSelectionController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        cells = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [cells release];
-    [form release];
     [super dealloc];
 }
 
@@ -49,16 +38,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.title = @"Search Criteria";
-    
-    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStyleDone target:self action:@selector(anything:)];
-    self.navigationItem.rightBarButtonItem = searchButton;
-    [searchButton release];
-    
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
-    self.navigationItem.leftBarButtonItem = cancelButton;
-    [cancelButton release];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -67,19 +46,28 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)cancel:(id)sender
-{
-    [self.navigationController dismissModalViewControllerAnimated:YES];
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    UIView *barView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+    barView.backgroundColor = [UIColor redColor];
+    UIBarButtonItem *barViewItem = [[UIBarButtonItem alloc] initWithCustomView:barView];
+
+//    UIBarButtonItem *bar = [[UIBarButtonItem alloc] initWithTitle:@"hello" style:UIBarButtonItemStylePlain target:self action:@selector(action:)];
+//    UIBarButtonItem *baz = [[UIBarButtonItem alloc] initWithTitle:@"goodbye" style:UIBarButtonItemStylePlain target:self action:@selector(action:)];
+    
+    self.title = @"TItlesssss";
+    
+    
+    self.navigationItem.rightBarButtonItem = barViewItem;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -99,44 +87,39 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if(interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
-        return YES;
-    else
-        return NO;
+    // Return YES for supported orientations
+	return YES;
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [form sectionCount];
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 1;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)sectionIndex
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    FVSection *section = [form sectionAtIndex:sectionIndex];
-    return section.title;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
-{
-    FVSection *section = [form sectionAtIndex:sectionIndex];
-    return [section fieldCount];
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FVSection *section = [form sectionAtIndex:[indexPath section]];
-    FVField *field = [section fieldAtIndex:[indexPath row]];    
+    static NSString *CellIdentifier = @"Cell";
     
-    FVEditorCellManager *cellManager = (FVEditorCellManager*)[cells objectForKey:field.identifier];
-    if (cellManager == nil) 
-    {
-        cellManager = [FVEditorCellFactory cellManagerForField:field];
-        [cells setObject:cellManager forKey:field.identifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    return cellManager.cell;
+    // Configure the cell...
+    cell.textLabel.text = [NSString stringWithFormat:@"Row %u", indexPath.row];
+    
+    return cell;
 }
 
 /*
@@ -182,18 +165,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FVSection *formSection = [form sectionAtIndex:indexPath.section];
-    FVField *formField = [formSection fieldAtIndex:indexPath.row];
-    FVFieldEditor *formEditor = [[formField editors] objectAtIndex:0];
-    
-    if([formEditor type] == FVMultipleChoiceField)
-    {
-        FVMultipleChoiceSelectionController *choiceController = [[FVMultipleChoiceSelectionController alloc] initWithStyle:UITableViewStylePlain];
-        [self.navigationController pushViewController:choiceController animated:YES];
-        [choiceController release];
-    }
-    
-    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
