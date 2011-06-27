@@ -188,7 +188,7 @@
     
     if([formEditor type] == FVMultipleChoiceField)
     {
-        FVMultipleChoiceSelectionController *choiceController = [[FVMultipleChoiceSelectionController alloc] initWithStyle:UITableViewStylePlain];
+        FVMultipleChoiceSelectionController *choiceController = [[FVMultipleChoiceSelectionController alloc] init];
         [self.navigationController pushViewController:choiceController animated:YES];
         [choiceController release];
     }

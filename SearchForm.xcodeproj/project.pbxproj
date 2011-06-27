@@ -29,6 +29,9 @@
 		3B3EC9B513B02E570009EFA6 /* FVEditorCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9B413B02E550009EFA6 /* FVEditorCellFactory.m */; };
 		3B3EC9BE13B0564D0009EFA6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EC9BD13B0564D0009EFA6 /* SettingsViewController.m */; };
 		3BBDFED113B2EDF200F30E91 /* FVMultipleChoiceSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBDFED013B2EDF200F30E91 /* FVMultipleChoiceSelectionController.m */; };
+		3BE77BE013B6A975005942E6 /* FVMultipleChoiceOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE77BDF13B6A975005942E6 /* FVMultipleChoiceOptions.xib */; };
+		3BE77BE413B6B616005942E6 /* SearchViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE77BE313B6B616005942E6 /* SearchViewBackground.png */; };
+		3BE77BE713B6BB25005942E6 /* FVMultipleChoiceEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE77BE613B6BB25005942E6 /* FVMultipleChoiceEditor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,11 @@
 		3B3EC9BD13B0564D0009EFA6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		3BBDFECF13B2EDF200F30E91 /* FVMultipleChoiceSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVMultipleChoiceSelectionController.h; sourceTree = "<group>"; };
 		3BBDFED013B2EDF200F30E91 /* FVMultipleChoiceSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVMultipleChoiceSelectionController.m; sourceTree = "<group>"; };
+		3BE77BDF13B6A975005942E6 /* FVMultipleChoiceOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVMultipleChoiceOptions.xib; sourceTree = "<group>"; };
+		3BE77BE213B6B2FE005942E6 /* FVMultipleChoiceDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVMultipleChoiceDatasource.h; sourceTree = "<group>"; };
+		3BE77BE313B6B616005942E6 /* SearchViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchViewBackground.png; sourceTree = "<group>"; };
+		3BE77BE513B6BB25005942E6 /* FVMultipleChoiceEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVMultipleChoiceEditor.h; sourceTree = "<group>"; };
+		3BE77BE613B6BB25005942E6 /* FVMultipleChoiceEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVMultipleChoiceEditor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				3B3EC9B013B02CBE0009EFA6 /* FVFieldEditor.h */,
+				3BE77BE513B6BB25005942E6 /* FVMultipleChoiceEditor.h */,
+				3BE77BE613B6BB25005942E6 /* FVMultipleChoiceEditor.m */,
 				3B3EC9B113B02CBF0009EFA6 /* FVFieldEditor.m */,
 				3B3EC9A013B025B50009EFA6 /* FVField.h */,
 				3B3EC9A113B025B50009EFA6 /* FVField.m */,
@@ -193,6 +203,7 @@
 				3B3EC9A413B025FF0009EFA6 /* FVForm.m */,
 				3B3EC9A613B026160009EFA6 /* FVSection.h */,
 				3B3EC9A713B026170009EFA6 /* FVSection.m */,
+				3BE77BE213B6B2FE005942E6 /* FVMultipleChoiceDatasource.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 		3B3EC9B813B048500009EFA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3BE77BE313B6B616005942E6 /* SearchViewBackground.png */,
 				3B3EC9B313B02E530009EFA6 /* FVEditorCellFactory.h */,
 				3B3EC9B413B02E550009EFA6 /* FVEditorCellFactory.m */,
 				3B043A8613B1B0AF00B91488 /* FVTextFieldCell.h */,
@@ -222,6 +234,7 @@
 				3B043A9013B1BB8500B91488 /* FVMultipleChoiceFieldCell.h */,
 				3B043A9113B1BB8500B91488 /* FVMultipleChoiceFieldCell.m */,
 				3B043A8E13B1BA9D00B91488 /* MultipleChoiceFieldCell.xib */,
+				3BE77BDF13B6A975005942E6 /* FVMultipleChoiceOptions.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -279,6 +292,8 @@
 				3B043A8D13B1B51700B91488 /* BooleanFieldCell.xib in Resources */,
 				3B043A8F13B1BA9E00B91488 /* MultipleChoiceFieldCell.xib in Resources */,
 				3B043AE813B2DEA400B91488 /* SearchView.xib in Resources */,
+				3BE77BE013B6A975005942E6 /* FVMultipleChoiceOptions.xib in Resources */,
+				3BE77BE413B6B616005942E6 /* SearchViewBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +317,7 @@
 				3B043A8B13B1B45D00B91488 /* FVBooleanFieldCell.m in Sources */,
 				3B043A9213B1BB8600B91488 /* FVMultipleChoiceFieldCell.m in Sources */,
 				3BBDFED113B2EDF200F30E91 /* FVMultipleChoiceSelectionController.m in Sources */,
+				3BE77BE713B6BB25005942E6 /* FVMultipleChoiceEditor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

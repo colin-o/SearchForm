@@ -7,21 +7,28 @@
 //
 
 #import "FVMultipleChoiceSelectionController.h"
-
+#import "FVFieldEditor.h"
 
 @implementation FVMultipleChoiceSelectionController
+@synthesize choicesTable;
+@synthesize toolbar;
+@synthesize searchCell;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithFieldEditor:(FVFieldEditor*)anEditor
 {
-    self = [super initWithStyle:style];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        editor = [anEditor retain];
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [editor release];
+    [choicesTable release];
+    [toolbar release];
+    [searchCell release];
     [super dealloc];
 }
 
@@ -38,6 +45,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[UINib nibWithNibName:@"FVMultipleChoiceOptions" bundle:nil] instantiateWithOwner:self options:nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -48,6 +57,9 @@
 
 - (void)viewDidUnload
 {
+    [self setChoicesTable:nil];
+    [self setToolbar:nil];
+    [self setSearchCell:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -57,17 +69,7 @@
 {
     [super viewWillAppear:animated];
     
-    UIView *barView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
-    barView.backgroundColor = [UIColor redColor];
-    UIBarButtonItem *barViewItem = [[UIBarButtonItem alloc] initWithCustomView:barView];
-
-//    UIBarButtonItem *bar = [[UIBarButtonItem alloc] initWithTitle:@"hello" style:UIBarButtonItemStylePlain target:self action:@selector(action:)];
-//    UIBarButtonItem *baz = [[UIBarButtonItem alloc] initWithTitle:@"goodbye" style:UIBarButtonItemStylePlain target:self action:@selector(action:)];
-    
     self.title = @"TItlesssss";
-    
-    
-    self.navigationItem.rightBarButtonItem = barViewItem;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -91,7 +93,27 @@
 	return YES;
 }
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    [searchBar setShowsCancelButton:NO animated:YES];
+}
+
 #pragma mark - Table view data source
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    NSMutableArray *titles = [[NSMutableArray alloc] initWithCapacity:26];
+    for(int i = 'A';i <= 'Z'; i++)
+        [titles addObject:[NSString stringWithFormat:@"%c", i]];
+    
+    return titles;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -109,6 +131,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(indexPath.row == 0)
+    {
+        return searchCell;
+    }
+    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -165,6 +192,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
