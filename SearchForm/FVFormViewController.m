@@ -12,6 +12,7 @@
 #import "FVSection.h"
 #import "FVField.h"
 #import "FVFieldEditor.h"
+#import "FVMultipleChoiceEditor.h"
 #import "FVMultipleChoiceSelectionController.h"
 
 
@@ -186,22 +187,13 @@
     FVField *formField = [formSection fieldAtIndex:indexPath.row];
     FVFieldEditor *formEditor = [[formField editors] objectAtIndex:0];
     
-    if([formEditor type] == FVMultipleChoiceField)
+    if([formEditor type] == FVMultipleChoiceField && [formEditor isKindOfClass:[FVMultipleChoiceEditor class]])
     {
-        FVMultipleChoiceSelectionController *choiceController = [[FVMultipleChoiceSelectionController alloc] init];
+        FVMultipleChoiceEditor *editor = (FVMultipleChoiceEditor*)formEditor;
+        FVMultipleChoiceSelectionController *choiceController = [[FVMultipleChoiceSelectionController alloc] initWithFieldEditor:editor];
         [self.navigationController pushViewController:choiceController animated:YES];
         [choiceController release];
     }
-    
-    
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
 }
 
 @end

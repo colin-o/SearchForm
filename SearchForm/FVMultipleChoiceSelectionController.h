@@ -8,18 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@class FVFieldEditor;
+@class FVMultipleChoiceEditor;
+@protocol FVMultipleChoiceDatasource;
 
 @interface FVMultipleChoiceSelectionController : UIViewController {
-    FVFieldEditor *editor;
+    FVMultipleChoiceEditor *editor;
+    id<FVMultipleChoiceDatasource> dataSource;
+    NSMutableDictionary *selections;
     UITableView *choicesTable;
-    UITableView *toolbar;
     UITableViewCell *searchCell;
+    NSMutableArray *sectionTitles;
 }
 @property (nonatomic, retain) IBOutlet UITableView *choicesTable;
-@property (nonatomic, retain) IBOutlet UITableView *toolbar;
 @property (nonatomic, retain) IBOutlet UITableViewCell *searchCell;
 
-- (id)initWithFieldEditor:(FVFieldEditor*)editor;
+- (id)initWithFieldEditor:(FVMultipleChoiceEditor*)editor;
+
+- (IBAction)selectNone:(id)sender;
+
+- (IBAction)selectAll:(id)sender;
 
 @end

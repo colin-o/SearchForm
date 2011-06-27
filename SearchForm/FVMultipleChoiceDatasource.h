@@ -11,8 +11,14 @@
 
 @protocol FVMultipleChoiceDatasource <NSObject>
 
-- (NSString*)displayValueForItem:(NSIndexPath*)indexPath;
+- (NSUInteger)countOfSections;
 
-- (NSArray*)identifiersForItems:(NSIndexSet*)indexSet;
+- (NSString*)titleOfSection:(NSUInteger)section;
+
+- (NSUInteger)countOfItemsInSection:(NSUInteger)section;
+
+- (NSString*)displayValueForItemInSection:(NSUInteger)section index:(NSUInteger)index;
+
+- (NSString*)identifierForItemInSection:(NSUInteger)section index:(NSUInteger)index;
 
 @end

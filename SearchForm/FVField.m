@@ -8,6 +8,7 @@
 
 #import "FVField.h"
 #import "FVFieldEditor.h"
+#import "FVMultipleChoiceEditor.h"
 
 
 @implementation FVField
@@ -61,11 +62,9 @@
     [editor release];    
 }
 
-- (void)addMultipleChoiceEditor:(NSString*)identifier
+- (void)addMultipleChoiceEditor:(FVMultipleChoiceEditor*)editor
 {
-    FVFieldEditor *editor = [[FVFieldEditor alloc] initWithType:FVMultipleChoiceField identifier:identifier];
     [self addEditor:editor];
-    [editor release];        
 }
 
 - (NSString*)identifier

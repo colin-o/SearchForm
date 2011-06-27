@@ -13,6 +13,8 @@
 		3B043A8F13B1BA9E00B91488 /* MultipleChoiceFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B043A8E13B1BA9D00B91488 /* MultipleChoiceFieldCell.xib */; };
 		3B043A9213B1BB8600B91488 /* FVMultipleChoiceFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B043A9113B1BB8500B91488 /* FVMultipleChoiceFieldCell.m */; };
 		3B043AE813B2DEA400B91488 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B043AE713B2DEA400B91488 /* SearchView.xib */; };
+		3B1EC77E13B8342300CB5E75 /* FVIndexedCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC77D13B8342300CB5E75 /* FVIndexedCollection.m */; };
+		3B1EC78213B837C300CB5E75 /* DummySource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC78113B837C300CB5E75 /* DummySource.m */; };
 		3B28133213B12A7A00DE297A /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B28133113B12A7A00DE297A /* TextFieldCell.xib */; };
 		3B3EC98013B0237A0009EFA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3EC97F13B0237A0009EFA6 /* UIKit.framework */; };
 		3B3EC98213B0237A0009EFA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3EC98113B0237A0009EFA6 /* Foundation.framework */; };
@@ -44,6 +46,10 @@
 		3B043A9013B1BB8500B91488 /* FVMultipleChoiceFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVMultipleChoiceFieldCell.h; sourceTree = "<group>"; };
 		3B043A9113B1BB8500B91488 /* FVMultipleChoiceFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVMultipleChoiceFieldCell.m; sourceTree = "<group>"; };
 		3B043AE713B2DEA400B91488 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		3B1EC77C13B8342300CB5E75 /* FVIndexedCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVIndexedCollection.h; sourceTree = "<group>"; };
+		3B1EC77D13B8342300CB5E75 /* FVIndexedCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVIndexedCollection.m; sourceTree = "<group>"; };
+		3B1EC78013B837C300CB5E75 /* DummySource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummySource.h; sourceTree = "<group>"; };
+		3B1EC78113B837C300CB5E75 /* DummySource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummySource.m; sourceTree = "<group>"; };
 		3B28133113B12A7A00DE297A /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		3B3EC97B13B0237A0009EFA6 /* SearchForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3EC97F13B0237A0009EFA6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -158,6 +164,8 @@
 				3B3EC98F13B0237A0009EFA6 /* SearchFormAppDelegate.m */,
 				3B3EC9BC13B0564D0009EFA6 /* SettingsViewController.h */,
 				3B3EC9BD13B0564D0009EFA6 /* SettingsViewController.m */,
+				3B1EC78013B837C300CB5E75 /* DummySource.h */,
+				3B1EC78113B837C300CB5E75 /* DummySource.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +212,8 @@
 				3B3EC9A613B026160009EFA6 /* FVSection.h */,
 				3B3EC9A713B026170009EFA6 /* FVSection.m */,
 				3BE77BE213B6B2FE005942E6 /* FVMultipleChoiceDatasource.h */,
+				3B1EC77C13B8342300CB5E75 /* FVIndexedCollection.h */,
+				3B1EC77D13B8342300CB5E75 /* FVIndexedCollection.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -318,6 +328,8 @@
 				3B043A9213B1BB8600B91488 /* FVMultipleChoiceFieldCell.m in Sources */,
 				3BBDFED113B2EDF200F30E91 /* FVMultipleChoiceSelectionController.m in Sources */,
 				3BE77BE713B6BB25005942E6 /* FVMultipleChoiceEditor.m in Sources */,
+				3B1EC77E13B8342300CB5E75 /* FVIndexedCollection.m in Sources */,
+				3B1EC78213B837C300CB5E75 /* DummySource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

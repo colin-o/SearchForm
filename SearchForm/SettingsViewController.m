@@ -8,6 +8,8 @@
 
 #import "SettingsViewController.h"
 #import "FVFormView.h"
+#import "FVMultipleChoiceEditor.h"
+#import "DummySource.h"
 
 @interface SettingsViewController(Private)
 - (void)createFormViewController;
@@ -53,6 +55,8 @@
     FVForm *form = [[FVForm alloc] init];
     FVSection *section = nil;
     FVField *field = nil;
+    DummySource *source = nil;
+    FVMultipleChoiceEditor *editor = nil;
     
     // Section
     section = [[FVSection alloc] initWithTitle:@"Search Criteria"];
@@ -90,19 +94,31 @@
     [section release];
     
     field = [[FVField alloc] initWithCaption:@"Plan Type"];
-    [field addMultipleChoiceEditor:@"planType"];
+    source = [[DummySource alloc] init];
+    editor = [[FVMultipleChoiceEditor alloc] initWithIdentifier:@"planType" dataSource:source];
+    [field addMultipleChoiceEditor:editor];
     [section addField:field];
     [field release];
+    [source release];
+    [editor release];
     
     field = [[FVField alloc] initWithCaption:@"Competitors"];
-    [field addMultipleChoiceEditor:@"competitors"];
+    source = [[DummySource alloc] init];
+    editor = [[FVMultipleChoiceEditor alloc] initWithIdentifier:@"competitors" dataSource:source];
+    [field addMultipleChoiceEditor:editor];
     [section addField:field];
     [field release];
+    [source release];
+    [editor release];
     
     field = [[FVField alloc] initWithCaption:@"Other Media"];
-    [field addMultipleChoiceEditor:@"otherMedia"];
+    source = [[DummySource alloc] init];
+    editor = [[FVMultipleChoiceEditor alloc] initWithIdentifier:@"otherMedia" dataSource:source];
+    [field addMultipleChoiceEditor:editor];
     [section addField:field];
     [field release];
+    [source release];
+    [editor release];
     
     field = [[FVField alloc] initWithCaption:@"Internet"];
     [field addBooleanEditor:@"internet"];
@@ -115,9 +131,13 @@
     [section release];
     
     field = [[FVField alloc] initWithCaption:@"Headings / Categories"];
-    [field addMultipleChoiceEditor:@"categories"];
+    source = [[DummySource alloc] init];
+    editor = [[FVMultipleChoiceEditor alloc] initWithIdentifier:@"categories" dataSource:source];
+    [field addMultipleChoiceEditor:editor];
     [section addField:field];
     [field release];
+    [source release];
+    [editor release];
     
     formController.form = form;
     [form release];  

@@ -8,26 +8,51 @@
 
 #import "FVMultipleChoiceSelectionController.h"
 #import "FVFieldEditor.h"
+#import "FVMultipleChoiceEditor.h"
+#import "FVMultipleChoiceDatasource.h"
 
 @implementation FVMultipleChoiceSelectionController
+
 @synthesize choicesTable;
-@synthesize toolbar;
 @synthesize searchCell;
 
-- (id)initWithFieldEditor:(FVFieldEditor*)anEditor
+- (id)initWithFieldEditor:(FVMultipleChoiceEditor*)anEditor
 {
     self = [super init];
     if (self) {
         editor = [anEditor retain];
+        dataSource = [editor dataSource];
+        selections = [[NSMutableDictionary alloc] init];
     }
     return self;
+}
+
+- (IBAction)selectNone:(id)sender {
+    [selections release];
+    selections = [[NSMutableDictionary alloc] init];
+    [choicesTable reloadData];
+}
+
+- (IBAction)selectAll:(id)sender {
+    [selections release];
+    selections = [[NSMutableDictionary alloc] init];
+    
+    for(NSUInteger section=0;section < [dataSource countOfSections]; section++)
+    {
+        NSMutableIndexSet *set = [[NSMutableIndexSet alloc] initWithIndexesInRange:NSMakeRange(0, [dataSource countOfItemsInSection:section])];
+        [selections setObject:set forKey:[NSNumber numberWithInteger:section]];
+        [set release];
+    }
+    
+    [choicesTable reloadData];
 }
 
 - (void)dealloc
 {
     [editor release];
+    [sectionTitles release];
+    [selections release];
     [choicesTable release];
-    [toolbar release];
     [searchCell release];
     [super dealloc];
 }
@@ -47,22 +72,13 @@
     [super viewDidLoad];
     
     [[UINib nibWithNibName:@"FVMultipleChoiceOptions" bundle:nil] instantiateWithOwner:self options:nil];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
 {
     [self setChoicesTable:nil];
-    [self setToolbar:nil];
     [self setSearchCell:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -89,7 +105,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
 	return YES;
 }
 
@@ -108,30 +123,42 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    NSMutableArray *titles = [[NSMutableArray alloc] initWithCapacity:26];
-    for(int i = 'A';i <= 'Z'; i++)
-        [titles addObject:[NSString stringWithFormat:@"%c", i]];
+    if(sectionTitles == nil)
+    {
+        int totalSections = [dataSource countOfSections] + 1;
+        sectionTitles = [[NSMutableArray alloc] initWithCapacity:totalSections];
+        [sectionTitles addObject:UITableViewIndexSearch];
+        for(NSUInteger i=0;i<totalSections-1;i++)
+            [sectionTitles addObject:[dataSource titleOfSection:i]];
+    }
     
-    return titles;
+    return sectionTitles;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
+    return [dataSource countOfSections] + 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if(section == 0)
+        return @"";
+    else
+        return [dataSource titleOfSection:section - 1];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 10;
+    if(section == 0)
+        return 1;
+    else
+        return [dataSource countOfItemsInSection:section - 1];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0)
+    if(indexPath.section == 0)
     {
         return searchCell;
     }
@@ -144,67 +171,38 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"Row %u", indexPath.row];
+    
+    cell.textLabel.text = [dataSource displayValueForItemInSection:indexPath.section - 1 index:indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    
+    NSMutableIndexSet *sectionSelections = [selections objectForKey:[NSNumber numberWithInteger:indexPath.section - 1]];
+    if(sectionSelections != nil && [sectionSelections containsIndex:indexPath.row])
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    NSNumber *sectionNumber = [NSNumber numberWithInteger:indexPath.section - 1];
+    NSMutableIndexSet *sectionSelections = [selections objectForKey:sectionNumber];
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if(sectionSelections == nil)
+    {
+        sectionSelections = [[NSMutableIndexSet alloc] init];
+        [selections setObject:sectionSelections forKey:sectionNumber];
+        [sectionSelections release];
+    }
     
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    BOOL wasSelected = [sectionSelections containsIndex:indexPath.row];
+    if(wasSelected)
+        [sectionSelections removeIndex:indexPath.row];
+    else
+        [sectionSelections addIndex:indexPath.row];
+    
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 @end

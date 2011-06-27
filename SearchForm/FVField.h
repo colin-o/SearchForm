@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class FVFieldEditor;
+@class FVMultipleChoiceEditor;
 
 @interface FVField : NSObject {
     NSMutableArray *editors;
@@ -27,7 +28,7 @@
 
 - (void)addBooleanEditor:(NSString*)identifier;
 
-- (void)addMultipleChoiceEditor:(NSString*)identifier;
+- (void)addMultipleChoiceEditor:(FVMultipleChoiceEditor*)editor;
 
 - (NSString*)identifier;
 
